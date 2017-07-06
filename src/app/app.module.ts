@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { LoggerToken, logger } from './logger.token';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    { provide: LoggerToken, useValue: logger }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
